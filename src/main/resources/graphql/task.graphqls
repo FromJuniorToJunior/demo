@@ -1,0 +1,12 @@
+type Task {
+    taskId: String
+    description: String
+    subTasks: [Task]
+    title: String
+    creationTime: String
+    startDate: String
+    endDate: String
+    asignedUsers: [User]
+    priority: String
+    project: Project
+}

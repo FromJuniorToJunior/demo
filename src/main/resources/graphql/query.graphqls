@@ -1,0 +1,17 @@
+# ALL avilable queries on this graphql server
+schema {
+    query: Query
+}
+type Query {
+    getUsers: [User]
+    getTasks: [Task]
+    getProjects: [Project]
+    getProject(id: String): Project
+
+    #Additional
+    getProjectByTitle(title: String): Project
+    getUsersBySurname(surname: String): [User]
+    getUserByEmail(email: String): User
+    getTasksSortByDate: [Task]
+    getTasksSortByTitle: [Task]
+}

@@ -1,0 +1,8 @@
+type User {
+    userId: String
+    name: String!
+    surname: String!
+    email: String!
+    dateOfBirth: String!
+    assignedTasks: [Task]
+}

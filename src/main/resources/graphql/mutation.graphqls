@@ -1,0 +1,54 @@
+schema {
+    mutation: Mutation
+}
+input userInput{
+    name: String
+    surname: String
+    email: String
+    dateOfBirth: String
+}
+enum Priority{
+    High
+    Medium
+    Low
+}
+input taskInput{
+    description: String
+    title: String
+    startDate: String
+    endDate: String
+    priority: Priority
+}
+input projectInput{
+    description: String
+    title: String
+    startDate: String
+    endDate: String
+}
+
+type Mutation{
+    #User
+    createUser(input: userInput): User
+    updateUser(id: String, input: userInput): User
+    deleteUser(id: String): String
+
+
+
+    #Project
+    createProject(input: projectInput): Project
+    updateProject(id: String, input: projectInput): Project
+    deleteProject(id: String): String
+
+
+
+    #Task
+    createTask(input: taskInput, projectId: String): Project
+    updateTask(id: String, input: taskInput): Task
+    deleteTask(id: String): String
+
+    #REF
+    taskAddUser(id: String, taskId: String): User
+    taskAddSubTask(id: String, subId: String): Task
+    projAddProject(id: String,subProject: String): Project
+
+}

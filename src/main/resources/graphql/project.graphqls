@@ -1,0 +1,10 @@
+type Project{
+    projectId: String
+    assignedTasks: [Task]
+    connectedProjects: [Project]
+    title: String
+    creationTime: String
+    description: String
+    startDate: String
+    endDate: String
+}
